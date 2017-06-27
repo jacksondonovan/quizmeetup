@@ -1,0 +1,30 @@
+{
+  "name": "quizmeetup",
+  "version": "1.0.0",
+  "description": "\"Users meet after taking each other's quizzes.\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacksondonovan/quizmeetup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacksondonovan/quizmeetup/issues"
+  },
+  "homepage": "https://github.com/jacksondonovan/quizmeetup#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-generator": "^4.15.0",
+    "hbs": "^4.0.1",
+    "knex": "^0.12.9",
+    "pg": "^6.4.0"
+  }
+}

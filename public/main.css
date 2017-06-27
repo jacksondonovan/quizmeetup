@@ -1,0 +1,29 @@
+*{
+  background-color: #888;
+}
+
+html,body{
+  min-height: 100%;
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+}
+
+.frontbuttons{
+  display: flex;
+  justify-content: center;
+}
+
+.inform{
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.qq{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
