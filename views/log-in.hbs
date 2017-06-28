@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="../main.css">
   </head>
   <body>
-    <a class="inform" href="/">Home</a>
-    {{msg}}
+    <div class="inform">
+      <a class="" href="/">Home</a>
+    </div>
+    <div class="inform">
+      {{msg}}
+    </div>
 
     <form class="" action="/profile" method="post">
       <input hidden type="text" name="id" value="{{user.id}}">
@@ -19,7 +23,10 @@
         <label for="">Password</label>
         <input type="password" name="password" value="">
       </div>
-      <button type="submit">Log In</button>
+      <div class="inform">
+        <button  type="submit">Log In</button>
+      </div>
+
     </form>
   </body>
 </html>
