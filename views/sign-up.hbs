@@ -14,13 +14,14 @@
 
 
     <form class="" action="/newest-user/{{username}}" method="post">
+      <input hidden type="text" name="id" value="{{user.id}}">
       <div class="inform">
         <label for="">Username</label>
         <input type="text" name="username" value="">
       </div>
       <div class="inform">
         <label for="">Password</label>
-        <input type="text" name="password" value="">
+        <input type="password" name="password" value="">
       </div>
       <div class="inform">
         <label for="">First Name</label>

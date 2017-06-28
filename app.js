@@ -7,7 +7,15 @@ const linkQuery = require('./db/linkQuery')
 const bodyParser = require('body-parser')
 
 const bcrypt = require('bcrypt')
+const cookieSession = require('cookie-session')
+const key = process.env.COOKIE_KEY || 'asdfasdf'
 
+
+app.use(cookieSession({
+  name: 'session',
+  keys: [key],
+  maxAge: 24 * 60 * 60 * 1000
+}))
 
 
 app.use(bodyParser.urlencoded({extended:false}))
@@ -26,6 +34,11 @@ app.get('/sign-up',(req,res)=>{
   res.render('sign-up',{msg: 'Free and easy sign up!'})
 })
 
+app.use(cookieSession({
+  name: 'session',
+  keys: [key],
+  maxAge: 24 * 60 * 60 * 1000
+}))
 
 
 app.post('/newest-user',(req,res)=>{
@@ -79,6 +92,40 @@ app.get('/addquiz',(req,res)=>{
 
 app.get('/profile',(req,res)=>{
   res.render('profile')
+})
+
+app.post('/profile',(req,res)=>{
+  pg('user_data').select().where({
+    username: req.body.username
+  }).first().then((user)=>{
+    console.log(user);
+    if(user){
+      bcrypt.compare(
+        req.body.password, user.password
+      ).then((data)=>{
+        console.log(data)
+      if(data){
+        console.log('hello',user.id);
+        console.log('sessionid',req.session.id);
+        req.session.id = user.id
+        res.redirect('/newest-user/' + user.username)
+      } else{
+        res.redirect('no/can/do')
+      }
+    })
+    }
+    else{
+      res.redirect('/invalid/creds')
+    }
+  })
+})
+
+app.get('/no/can/do',(req,res)=>{
+  res.render('oops',{message: 'invalid password'})
+})
+
+app.get('/invalid/creds',(req,res)=>{
+    res.render('oops',{message: 'invalid username'})
 })
 
 // app.get('/newest-user',(req,res)=>{
