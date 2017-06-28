@@ -3,11 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Log In</title>
+    <link rel="stylesheet" href="../main.css">
   </head>
   <body>
-    <a href="/">Home</a>
+    <a class="inform" href="/">Home</a>
     {{msg}}
 
-
+    <form class="" action="index.html" method="post">
+      <div class="inform">
+        <label for="">Username</label>
+        <input type="text" name="username" value="">
+      </div>
+      <div class="inform">
+        <label for="">Password</label>
+        <input type="text" name="password" value="">
+      </div>
+      <a href="/profile"><button type="button">Log In</button></a>
+    </form>
   </body>
 </html>

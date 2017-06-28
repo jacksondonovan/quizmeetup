@@ -7,9 +7,13 @@
   </head>
   <body>
     <a class="inform" href="/">Home</a>
-    {{msg}}
+    <p class="inform">{{msg}}</p>
 
-    <form class="" action="/newest-user" method="post">
+
+    <!-- <a href="/profile/student/{{student.uname}}"</a> -->
+
+
+    <form class="" action="/newest-user/{{username}}" method="post">
       <div class="inform">
         <label for="">Username</label>
         <input type="text" name="username" value="">

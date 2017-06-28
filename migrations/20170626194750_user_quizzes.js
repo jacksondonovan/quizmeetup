@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
     table.string('answer_two')
     table.string('answer_three')
     table.string('answer_four')
+    table.integer('correct_answer')
+
   })
 };
 

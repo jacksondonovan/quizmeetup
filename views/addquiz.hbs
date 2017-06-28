@@ -1,14 +1,42 @@
-<a href="/"><button type="button"></button>Return to Profile</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add A Quiz</title>
+    <link rel="stylesheet" href="../main.css">
+  </head>
+  <body>
+    <a href="/"><button type="button"></button>Return to Profile</a>
 
-<form class="" action="/profile" method="post">
-  <label for="">Question</label>
-  <input type="text" name="question" value="">
-  <label for="">Answer One:</label>
-  <input type="text" name="answer_one" value="">
-  <label for="">Answer Two:</label>
-  <input type="text" name="answer_two" value="">
-  <label for="">Answer Three:</label>
-  <input type="text" name="answer_three" value="">
-  <label for="">Answer Four:</label>
-  <input type="text" name="answer_four" value="">
-</form>
+    <form class="" action="/quizcollection" method="post">
+      <div class="inform">
+        <label for="">Question</label>
+        <input type="text" name="question" value="" required>
+      </div>
+      <div class="inform">
+        <label for="">Answer One:</label>
+        <input type="text" name="answer_one" value="" required>
+      </div>
+      <div class="inform">
+        <label for="">Answer Two:</label>
+        <input type="text" name="answer_two" value="" required>
+      </div>
+      <div class="inform">
+        <label for="">Answer Three:</label>
+        <input type="text" name="answer_three" value="" required>
+      </div>
+      <div class="inform">
+        <label for="">Answer Four:</label>
+        <input type="text" name="answer_four" value="" required>
+      </div>
+      <div class="inform">
+        <p><p>Which of these is correct? Enter 1, 2, 3 or 4</p>
+      </div>
+      <div class="inform">
+        <label for="">Correct Answer</label>
+        <input type="number" name="correct_answer" value="" required>
+      </div>
+      <a class="inform" href="#"><button type="submit">Submit Question</button></a>
+    </form>
+  </body>
+</html>
